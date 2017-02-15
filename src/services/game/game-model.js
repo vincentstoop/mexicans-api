@@ -9,10 +9,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const gameSchema = new Schema({
-  text: {
-    type: String,
-    required: true
-  },
+  gameMaster: { type: Schema.Types.ObjectId, ref: 'user' },
+  title: { type: String, required: true },
+  players: [ Schema.Types.ObjectId ],
+  rounds: { type: Number, required: true, 'default': 0 },
+  pin: { type: Number, required: false },
   createdAt: {
     type: Date,
     'default': Date.now
