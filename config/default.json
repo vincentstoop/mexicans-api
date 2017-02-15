@@ -1,0 +1,12 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "mongodb": "mongodb://localhost:27017/mexicansApi",
+  "public": "../public/",
+  "auth": {
+    "token": {
+      "secret": "Snd2DkOYo7r34liD4L5ogcAQSxrsNbz30RrFYVEfoCpGb3VkEl+iU6WAQ8BNpvB7yD2K+Rh2FB+WTuZLqqUKnQ=="
+    },
+    "local": {}
+  }
+}
