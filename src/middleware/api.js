@@ -11,28 +11,36 @@ class API {
       .configure(feathers.socketio(socket))
       .configure(feathers.hooks())
       // Use localStorage to store our login token
-      .configure(feathers.authentication({
-        type: 'local',
-        storage: window.localStorage,
-      }));
+      .configure(
+        feathers.authentication({
+          type: 'local',
+          storage: window.localStorage
+        })
+      );
   }
 
   service(serviceName) {
-    return this.app.service(serviceName)
+    return this.app.service(serviceName);
   }
 
   authenticate(user) {
-    const { email, password } = user
-    return this.app.authenticate(
-      Object.assign({}, { type: 'local' }, {
+    const {
       email,
-      password,
-    }))
+      password
+    } = user;
+    return this.app.authenticate(
+      Object.assign({}, {
+        type: 'local'
+      }, {
+        email,
+        password
+      })
+    );
   }
 
   signOut() {
-    return this.app.logout()
+    return this.app.logout();
   }
 }
 
-export default API
+export default API;
