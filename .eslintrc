@@ -6,10 +6,10 @@
     "es6": true
   },
   "rules": {
-    "arrow-parens": [2, "as-needed"],
-    "semi": ["error", "always"],
+    "arrow-parens": [2, "always"],
     "eol-last": 0,
     "space-before-function-paren": 0,
-    "no-trailing-spaces": 0
+    "no-trailing-spaces": 0,
+    "semi": 0
   }
 }
