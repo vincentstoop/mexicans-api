@@ -18,7 +18,7 @@ const gameService = app.service('games');
 
 const user = {
   name: 'Harry James Potter',
-  email: 'harryjames3@hogwarts.co.uk',
+  email: 'james0912358927512@hogwarts.co.uk',
   password: 'abcd1234'
 }
 

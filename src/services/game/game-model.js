@@ -20,7 +20,7 @@ const playerSchema = new Schema({
 });
 
 const gameSchema = new Schema({
-  gameMaster: { type: Schema.Types.ObjectId, ref: 'user' },
+  gameMasterId: { type: Schema.Types.ObjectId, ref: 'user' },
   title: { type: String, required: true },
   players: [ playerSchema ],
   rounds: { type: Number, required: true, 'default': 0 },
