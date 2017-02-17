@@ -16,13 +16,11 @@ const app = feathers()
 const userService = app.service('users');
 const gameService = app.service('games');
 
-const user = [
-  {
-    name: 'Harry James Potter',
-    email: 'harryjames@hogwarts.co.uk',
-    password: 'abcd1234'
-  }
-]
+const user = {
+  name: 'Harry James Potter',
+  email: 'harryjames3@hogwarts.co.uk',
+  password: 'abcd1234'
+}
 
 const games = [
   {
