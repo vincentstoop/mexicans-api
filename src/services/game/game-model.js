@@ -10,6 +10,7 @@ const Schema = mongoose.Schema;
 
 const playerSchema = new Schema({
   user: { type: Schema.Types.ObjectId, ref: 'user' },
+  gameStarted: { type: Boolean, required: true, 'default': false },
   lifesLeft: { type: Number, required: true, 'default': 6 },
   roundRoll: { type: Number, required: true, 'default': 0 },
   currentPlayer: { type: Boolean, required: true, 'default': false },
@@ -24,6 +25,7 @@ const gameSchema = new Schema({
   players: [ playerSchema ],
   rounds: { type: Number, required: true, 'default': 0 },
   pin: { type: Number, required: false },
+  gameStarted: { type: Boolean, required: true, 'default': false },
   createdAt: {
     type: Date,
     'default': Date.now
