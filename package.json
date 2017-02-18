@@ -34,6 +34,7 @@
     "feathers-configuration": "^0.3.3",
     "feathers-errors": "^2.5.0",
     "feathers-hooks": "^1.7.1",
+    "feathers-hooks-common": "^2.0.3",
     "feathers-mongoose": "^3.6.2",
     "feathers-rest": "^1.6.0",
     "feathers-socketio": "^1.4.2",
@@ -43,8 +44,10 @@
     "winston": "^2.3.1"
   },
   "devDependencies": {
+    "feathers-client": "^1.9.0",
     "jshint": "^2.9.4",
     "mocha": "^3.2.0",
-    "request": "^2.79.0"
+    "request": "^2.79.0",
+    "superagent": "^3.4.4"
   }
 }
