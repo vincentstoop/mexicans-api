@@ -17,8 +17,8 @@ const userService = app.service('users');
 const gameService = app.service('games');
 
 const user = {
-  name: 'Harry James Potter',
-  email: 'james0912358927512@hogwarts.co.uk',
+  name: 'Harry Potter',
+  email: 'james091@hogwarts.co.uk',
   password: 'abcd1234'
 }
 
@@ -27,6 +27,11 @@ const games = [
     title: 'First game',
     rounds: 2,
     gameStarted: true
+  },
+  {
+    title: 'Second Game',
+    rounds: 0,
+    gameStarted: false
   }
 ]
 
