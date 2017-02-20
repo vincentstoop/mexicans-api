@@ -13,6 +13,8 @@ const playerSchema = new Schema({
   userName: {type: String, required: true},
   gameStarted: { type: Boolean, required: true, 'default': false },
   lifesLeft: { type: Number, required: true, 'default': 6 },
+  dice1: {type: Number, required: true, 'default': 0},
+  dice2: {type: Number, required: true, 'default': 0},
   roundRoll: { type: Number, required: true, 'default': 0 },
   currentPlayer: { type: Boolean, required: true, 'default': false },
   roundPlayed: { type: Boolean, required: true, 'default': false },
