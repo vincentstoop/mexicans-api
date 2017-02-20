@@ -4,12 +4,10 @@ module.exports = function(options) {
   return function(hook) {
     const { dice1, dice2 } = hook.data
     if (dice1 && dice2) {
-      console.log('I am waiting for Vincent');
-      console.log(dice1);
-      console.log(dice2);
       var roundRoll
       if ((dice1 === 1 && dice2 === 2) || (dice1 === 2 && dice2 === 1)) {
-        console.log('You are unbeatable')
+        roundRoll = 1000
+        console.log('You are unbeatable', roundRoll)
       } else if (dice1 === dice2) {
         roundRoll = dice1 * 100
         console.log('Everyone can do better:', roundRoll);
@@ -21,13 +19,16 @@ module.exports = function(options) {
         console.log('Everyone can do better:', roundRoll);
       }
     }
-
+    // console.log(hook.id);
     return hook.app.service('games').get(hook.id).then((game) => {
       game.players.forEach((player, index) => {
         if (hook.params.user._id.toString() === player.userId.toString()) {
-          hook.data.players[index].dice1 = dice1
-          hook.data.players[index].dice2 = dice2
-          hook.data.players[index].roundRoll = roundRoll
+          if (dice1 && dice2) {
+            game.players[index].dice1 = dice1
+            game.players[index].dice2 = dice2
+            game.players[index].roundRoll = roundRoll
+            hook.data.players = [].concat(game.players)
+          }
         }
       })
     })
