@@ -29,6 +29,7 @@ const gameSchema = new Schema({
   rounds: { type: Number, required: true, 'default': 0 },
   pin: { type: Number, required: false },
   gameStarted: { type: Boolean, required: true, 'default': false },
+  playersReady: { type: Boolean, required: true, 'default': false },
   createdAt: {
     type: Date,
     'default': Date.now
