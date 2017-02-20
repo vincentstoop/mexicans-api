@@ -9,7 +9,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const playerSchema = new Schema({
-  user: { type: Schema.Types.ObjectId, ref: 'user' },
+  userId: { type: Schema.Types.ObjectId, ref: 'user' },
+  userName: {type: String, required: true},
   gameStarted: { type: Boolean, required: true, 'default': false },
   lifesLeft: { type: Number, required: true, 'default': 6 },
   roundRoll: { type: Number, required: true, 'default': 0 },
