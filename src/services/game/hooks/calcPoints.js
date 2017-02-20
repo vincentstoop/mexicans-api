@@ -4,9 +4,6 @@ module.exports = function(options) {
   return function(hook) {
     const { dice1, dice2 } = hook.data
     if (dice1 && dice2) {
-      // console.log('I am waiting for Vincent');
-      // console.log(dice1);
-      // console.log(dice2);
       var roundRoll
       if ((dice1 === 1 && dice2 === 2) || (dice1 === 2 && dice2 === 1)) {
         roundRoll = 1000
@@ -26,16 +23,12 @@ module.exports = function(options) {
     return hook.app.service('games').get(hook.id).then((game) => {
       game.players.forEach((player, index) => {
         if (hook.params.user._id.toString() === player.userId.toString()) {
-          // if (dice1 && dice2) {
-            // console.log(index, player);
-            // console.log('hook.data', hook.data);
-            // console.log('game', game);
+          if (dice1 && dice2) {
             game.players[index].dice1 = dice1
             game.players[index].dice2 = dice2
             game.players[index].roundRoll = roundRoll
             hook.data.players = [].concat(game.players)
-            // hook.data.players.concat(game.players[index])
-          // }
+          }
         }
       })
     })
