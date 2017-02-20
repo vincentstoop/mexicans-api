@@ -23,15 +23,13 @@ module.exports = function(options) {
     }
 
     return hook.app.service('games').get(hook.id).then((game) => {
-      console.log(game.players);
-      game.players.forEach((player) => {
+      game.players.forEach((player, index) => {
         if (hook.params.user._id.toString() === player.userId.toString()) {
-          player.dice1 = dice1
-          player.dice2 = dice2
-          player.roundRoll = roundRoll
+          hook.data.players[index].dice1 = dice1
+          hook.data.players[index].dice2 = dice2
+          hook.data.players[index].roundRoll = roundRoll
         }
       })
-      console.log(game.players);
     })
   }
 }
