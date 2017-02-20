@@ -8,6 +8,9 @@ const common = require('feathers-hooks-common');
 const createGame = require('./createGame');
 const joinGame = require('./joinGame');
 const calcPoints = require('./calcPoints');
+const initGame = require('./initGame');
+const makePlayerReady = require('./makePlayerReady');
+const checkIfPlayersReady = require('./checkIfPlayersReady')
 const populateGameMaster = common.populate('gameMaster', {
   service: 'users',
   field: 'gameMasterId'
@@ -21,10 +24,10 @@ exports.before = {
   get: [],
   create: [createGame()],
   update: [
-    joinGame(), calcPoints()
+    joinGame(), calcPoints(), initGame(), makePlayerReady()
   ],
   patch: [
-    joinGame(), calcPoints()
+    joinGame(), calcPoints(), initGame(), makePlayerReady()
   ],
   remove: []
 };
@@ -34,7 +37,7 @@ exports.after = {
   find: [],
   get: [],
   create: [],
-  update: [],
-  patch: [],
+  update: [checkIfPlayersReady()],
+  patch: [checkIfPlayersReady()],
   remove: []
 };
