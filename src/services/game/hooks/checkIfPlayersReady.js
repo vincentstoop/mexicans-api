@@ -8,8 +8,6 @@ module.exports = function(options) {
         var check = game.players.every(player => {
           return player.gameStarted === true;
         });
-        console.log(check);
-
         hook.data.playersReady = check;
       })
     }
