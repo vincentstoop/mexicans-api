@@ -7,16 +7,12 @@ module.exports = function(options) {
       var roundRoll
       if ((dice1 === 1 && dice2 === 2) || (dice1 === 2 && dice2 === 1)) {
         roundRoll = 1000
-        console.log('You are unbeatable', roundRoll)
       } else if (dice1 === dice2) {
         roundRoll = dice1 * 100
-        console.log('Everyone can do better:', roundRoll);
       } else if (dice1 > dice2) {
         roundRoll = (dice1 * 10) + dice2
-        console.log('Everyone can do better:', roundRoll);
       } else if (dice2 > dice1) {
         roundRoll = (dice2 * 10) + dice1
-        console.log('Everyone can do better:', roundRoll);
       }
     }
     // console.log(hook.id);

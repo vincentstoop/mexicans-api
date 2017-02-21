@@ -11,6 +11,7 @@ module.exports = function(options) {
 
       game.playersReady = check;
       hook.result = game;
+      // hook.data.playersReady = check
     });
   };
 };
