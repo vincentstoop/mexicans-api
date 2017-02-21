@@ -24,10 +24,10 @@ exports.before = {
   get: [],
   create: [createGame()],
   update: [
-    joinGame(), calcPoints(), initGame(), makePlayerReady()
+    joinGame(), calcPoints(), initGame(), makePlayerReady(), checkIfPlayersReady()
   ],
   patch: [
-    joinGame(), calcPoints(), initGame(), makePlayerReady()
+    joinGame(), calcPoints(), initGame(), makePlayerReady(), checkIfPlayersReady()
   ],
   remove: []
 };
@@ -37,7 +37,7 @@ exports.after = {
   find: [],
   get: [],
   create: [],
-  update: [checkIfPlayersReady()],
-  patch: [checkIfPlayersReady()],
+  update: [],
+  patch: [],
   remove: []
 };
